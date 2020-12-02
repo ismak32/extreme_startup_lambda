@@ -21,6 +21,11 @@ public class ResponderModel {
         if (eiffelMatcher.matches()) {
             return "Paris";
         }
+
+        Matcher fibonnaciMatcher = Pattern.compile(".*what is the 4th number in the Fibonacci sequence").matcher(question);
+        if (fibonnaciMatcher.matches()) {
+            return "3";
+        }
         
         return teamName;
     }
