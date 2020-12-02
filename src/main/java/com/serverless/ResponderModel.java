@@ -33,6 +33,11 @@ public class ResponderModel {
         if (bananaMatcher.matches()) {
             return "yellow";
         }
+
+        Matcher multMatcher = Pattern.compile(".*what is (\\d+) multiplied by (\\d+)").matcher(question);
+        if (multMatcher.matches()) {
+            return String.valueOf(Integer.parseInt(sumMatcher.group(1)) * Integer.parseInt(sumMatcher.group(2)));
+        }
         
         return teamName;
     }
