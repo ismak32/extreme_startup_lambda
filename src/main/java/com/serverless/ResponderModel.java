@@ -7,7 +7,8 @@ public class ResponderModel {
     private final String teamName = "devco";
 
     public String answer(String question) {
-        if ("".equals(question)){
+        Matcher nameMatcher = Pattern.compile(".*what is your name").matcher(question);
+        if (nameMatcher.matches()){
             return teamName;
         }
 
