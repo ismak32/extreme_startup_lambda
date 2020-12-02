@@ -22,12 +22,25 @@ public class ResponderModel {
             return "Paris";
         }
 
-        Matcher fibonnaciMatcher = Pattern.compile(".*what is the 4th number in the Fibonacci sequence").matcher(question);
+        Matcher fibonnaciMatcher = Pattern.compile(".*what is the (\\d+)th number in the Fibonacci sequence").matcher(question);
         if (fibonnaciMatcher.matches()) {
-            return "3";
+            Integer numeropedido = Integer.parseInt(fibonnaciMatcher.group(1));
+            Integer respInt = fib(numeropedido);
+            return respInt.toString();
+        }
+
+        Matcher bananaMatcher = Pattern.compile(".*what colour is a banana").matcher(question);
+        if (bananaMatcher.matches()) {
+            return "yellow";
         }
         
         return teamName;
+    }
+
+    private int fib(int n) {
+        if (n <= 1)
+            return n;
+        return fib(n-1) + fib(n-2);
     }
 
 }
