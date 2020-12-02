@@ -15,7 +15,7 @@ public class Handler implements RequestHandler<Map<String, Object>, ApiGatewayRe
 
 	@Override
 	public ApiGatewayResponse handleRequest(Map<String, Object> input, Context context) {
-		LOG.info("received: " + input);
+		//LOG.info("received: " + input);
 		Map<String,String> queryStringParameters =  (Map<String,String>)input.get("queryStringParameters");
         String question = queryStringParameters.get("q");
 		LOG.info("**QUESTION**: " + question);
