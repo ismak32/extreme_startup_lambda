@@ -36,7 +36,7 @@ public class ResponderModel {
 
         Matcher multMatcher = Pattern.compile(".*what is (\\d+) multiplied by (\\d+)").matcher(question);
         if (multMatcher.matches()) {
-            return String.valueOf(Integer.parseInt(sumMatcher.group(1)) * Integer.parseInt(sumMatcher.group(2)));
+            return String.valueOf(Integer.parseInt(multMatcher.group(1)) * Integer.parseInt(multMatcher.group(2)));
         }
         
         return teamName;
