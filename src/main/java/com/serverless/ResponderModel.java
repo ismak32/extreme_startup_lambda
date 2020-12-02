@@ -16,6 +16,11 @@ public class ResponderModel {
         if (sumMatcher.matches()) {
             return String.valueOf(Integer.parseInt(sumMatcher.group(1)) + Integer.parseInt(sumMatcher.group(2)));
         }
+
+        Matcher eiffelMatcher = Pattern.compile(".*which city is the Eiffel tower in").matcher(question);
+        if (eiffelMatcher.matches()) {
+            return "Paris";
+        }
         
         return teamName;
     }
