@@ -15,6 +15,13 @@ public class ResponderModelTest {
     }
 
     @Test
+    public void cuandoPreguntaElNumeroMayor2 (){
+        String pregunta = "76b11240: which of the following numbers is the largest: 99, 305";
+        String respuesta = responderModel.answer(pregunta);
+        assertThat(respuesta).isEqualTo("305");
+    }
+
+    @Test
     public void cuandoPreguntaPorNombreRespondeCarlos (){
         String pregunta = "428b0c80: what is your name";
         String respuesta = responderModel.answer(pregunta);
