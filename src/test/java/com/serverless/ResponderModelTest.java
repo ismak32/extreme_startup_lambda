@@ -22,6 +22,20 @@ public class ResponderModelTest {
     }
 
     @Test
+    public void cuandoPreguntaSuma (){
+        String pregunta = "83c615f0: what is 18 plus 9";
+        String respuesta = responderModel.answer(pregunta);
+        assertThat(respuesta).isEqualTo("27");
+    }
+
+    @Test
+    public void cuandoPreguntaSuma2 (){
+        String pregunta = "8aac66f0: what is 9 plus 14";
+        String respuesta = responderModel.answer(pregunta);
+        assertThat(respuesta).isEqualTo("23");
+    }
+
+    @Test
     public void cuandoPreguntaPorNombreRespondeCarlos (){
         String pregunta = "428b0c80: what is your name";
         String respuesta = responderModel.answer(pregunta);
