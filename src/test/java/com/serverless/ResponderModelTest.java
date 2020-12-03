@@ -8,6 +8,13 @@ public class ResponderModelTest {
     ResponderModel responderModel = new ResponderModel();
 
     @Test
+    public void cuandoPreguntaElNumeroMayor (){
+        String pregunta = "76b11240: which of the following numbers is the largest: 99, 305, 41, 514, 1000";
+        String respuesta = responderModel.answer(pregunta);
+        assertThat(respuesta).isEqualTo("1000");
+    }
+
+    @Test
     public void cuandoPreguntaPorNombreRespondeCarlos (){
         String pregunta = "428b0c80: what is your name";
         String respuesta = responderModel.answer(pregunta);
