@@ -11,7 +11,7 @@ authorAvatar: 'https://avatars3.githubusercontent.com/u/1767769?v=4&s=140'
 -->
 # Simple HTTP Endpoint Example
 
-This example demonstrates how to setup a simple HTTP GET endpoint using Java. Once you ping it, it will reply with the current time.
+ok. This example demonstrates how to setup a simple HTTP GET endpoint using Java. Once you ping it, it will reply with the current time.
 
 [Jackson](https://github.com/FasterXML/jackson) is used to serialize objects to JSON.
 
