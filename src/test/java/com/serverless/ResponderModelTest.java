@@ -8,6 +8,20 @@ public class ResponderModelTest {
     ResponderModel responderModel = new ResponderModel();
 
     @Test
+    public void cuandoPreguntaCuadradoYCubo2 (){
+        String pregunta = "b8b3d3a0: which of the following numbers is both a square and a cube: 832, 81";
+        String respuesta = responderModel.answer(pregunta);
+        assertThat(respuesta).isEqualTo("832");
+    }
+
+    @Test
+    public void cuandoPreguntaCuadradoYCubo (){
+        String pregunta = "be7ac100: which of the following numbers is both a square and a cube: 531441, 98";
+        String respuesta = responderModel.answer(pregunta);
+        assertThat(respuesta).isEqualTo("531441");
+    }
+
+    @Test
     public void cuandoPreguntaElNumeroMayor (){
         String pregunta = "76b11240: which of the following numbers is the largest: 99, 305, 41, 514, 1000";
         String respuesta = responderModel.answer(pregunta);

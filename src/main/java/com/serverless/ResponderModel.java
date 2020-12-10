@@ -12,6 +12,21 @@ public class ResponderModel {
             return teamName;
         }
 
+        Matcher cuadradoCuboMatcher = Pattern.compile(".*which of the following numbers is both a square and a cube:.*").matcher(question);
+        if (cuadradoCuboMatcher.matches()){
+            String[] digitosPregunta = question.split(".*:");
+            Matcher digitos = Pattern.compile("(\\d+)").matcher(digitosPregunta[1]);
+
+            while (digitos.find()){
+                Integer iter = Integer.parseInt(digitos.group());
+                boolean resp = isCuadradoYCubo(iter);
+                if (resp){
+                    return iter.toString();
+                }
+            }
+            return "";
+        }
+
         Matcher mayorMatcher = Pattern.compile(".*which of the following numbers is the largest:.*").matcher(question);
         if (mayorMatcher.matches()){
             String[] digitosPregunta = question.split(".*:");
@@ -60,6 +75,19 @@ public class ResponderModel {
         if (n <= 1)
             return n;
         return fib(n-1) + fib(n-2);
+    }
+
+    public boolean isCuadradoYCubo(Integer numero){
+        boolean resp = false;
+        Double cuadrado = Math.sqrt(numero);
+        Double cubo = Math.cbrt(numero);
+
+        Double moduloCuadrado = cuadrado % cuadrado;
+        Double moduloCubo = cubo % cubo;
+        if ( moduloCuadrado == 0 && moduloCubo == 0 ){
+            resp = true;
+        }
+        return  resp;
     }
 
 }
